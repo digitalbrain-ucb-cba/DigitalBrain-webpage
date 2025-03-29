@@ -5,7 +5,7 @@ html {
 
   /* Primary palette variables */
   --mat-sys-primary: light-dark(#006875, #23B2C6);
-  --mat-sys-on-primary: light-dark(#ffffff, #00363d);
+  --mat-sys-on-primary: light-dark(#ffffff, #ffffff);
   --mat-sys-primary-container: light-dark(#9defff, #004f59);
   --mat-sys-on-primary-container: light-dark(#001f24, #9defff);
   --mat-sys-inverse-primary: light-dark(#59d7ec, #006875);
@@ -41,7 +41,7 @@ html {
   --mat-sys-surface-dim: light-dark(#d5dbdc, #0f1415);
   --mat-sys-surface-bright: light-dark(#f5fafb, #343a3b);
   --mat-sys-surface-container-lowest: light-dark(#ffffff, #090f10);
-  --mat-sys-surface-container: light-dark(#e9eff0, #1b2122);
+  --mat-sys-surface-container: light-dark(#e9eff0, #2ac0d4);
   --mat-sys-surface-container-high: light-dark(#e4e9ea, #252b2c);
   --mat-sys-surface-container-highest: light-dark(#dee3e5, #303637);
   --mat-sys-on-surface: light-dark(#171d1e, #dee3e5);
