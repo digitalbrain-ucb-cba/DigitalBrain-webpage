@@ -1,0 +1,28 @@
+name: Angular Deploy
+
+on:
+  workflow_run:
+    workflows: ["Angular CI"]
+    types:
+      - completed
+
+jobs:
+  deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Instalar dependencias y build de Angular
+        run: |
+          npm install
+          npx ng build --configuration production
+      - name: Comprimir el build
+        run: zip -r dist.zip ./dist
+      - name: Enviar a servidor via Webhook
+        env:
+          SERVER_WEBHOOK_URL: ${{ secrets.SERVER_WEBHOOK_URL }}
+        run: |
+          curl -X POST -F "dist=@dist.zip" $SERVER_WEBHOOK_URL
