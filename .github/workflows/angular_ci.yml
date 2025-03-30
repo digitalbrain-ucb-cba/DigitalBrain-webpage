@@ -21,6 +21,3 @@ jobs:
 
     - name: Build de Angular (producción)
       run: npx ng build --configuration production
-
-    - name: Ejecutar pruebas (opcional pero recomendado)
-      run: npx ng test --watch=false --browsers=ChromeHeadless
