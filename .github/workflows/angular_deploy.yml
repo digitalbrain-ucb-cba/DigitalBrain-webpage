@@ -1,18 +1,17 @@
 name: Angular Deploy
 
 on:
-  workflow_run:
-    workflows: ["Angular CI"]
-    types:
-      - completed
+  push:
+    branches: [main]
 
 jobs:
   deploy:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout del código
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
       - name: Instalar dependencias y build de Angular
