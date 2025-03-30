@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-navbar',
@@ -15,11 +16,16 @@ import { CommonModule } from '@angular/common';
     MatButtonModule,
     MatIconModule,
     MatMenuModule,
-    RouterLink
+    RouterLink,
+    MatSidenavModule
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-
+  isOpen = false;
+  
+  toggleMenu() {
+    this.isOpen = !this.isOpen;
+  }
 }
