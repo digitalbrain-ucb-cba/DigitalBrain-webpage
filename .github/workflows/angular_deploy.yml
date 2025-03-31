@@ -22,3 +22,22 @@ jobs:
           SERVER_WEBHOOK_URL: ${{ secrets.SERVER_WEBHOOK_URL }}
         run: |
           curl -f -X POST -H "Content-Type: application/json" -d '{"trigger": "deploy"}' $SERVER_WEBHOOK_URL
+      
+      - name: Create Deployment
+        id: create_deployment
+        uses: peter-evans/create-deployment@v1
+        with:
+          ref: ${{ github.ref }}
+          environment: production
+          description: "Deploy to production: https://digitalbrain.cba.ucb.edu.bo"
+          auto_merge: false
+          transient_environment: false
+          required_contexts: []
+
+      - name: Set Deployment Status to Success
+        uses: peter-evans/create-deployment-status@v1
+        with:
+          deployment_id: ${{ steps.create_deployment.outputs.deployment_id }}
+          state: success
+          environment_url: "https://digitalbrain.cba.ucb.edu.bo/"
+          description: "Production deployment successful."
