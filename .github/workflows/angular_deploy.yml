@@ -10,18 +10,19 @@ jobs:
     steps:
       - name: Checkout del código
         uses: actions/checkout@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
+
       - name: Instalar dependencias y build de Angular
         run: |
           npm install
           npx ng build --configuration production
-      - name: Comprimir el build
-        run: zip -r dist.zip ./dist
-      - name: Enviar a servidor via Webhook
+
+      - name: Enviar señal de deployment al servidor
         env:
           SERVER_WEBHOOK_URL: ${{ secrets.SERVER_WEBHOOK_URL }}
         run: |
-          curl -X POST -F "dist=@dist.zip" $SERVER_WEBHOOK_URL
+          curl -X POST -H "Content-Type: application/json" -d '{"trigger": "deploy"}' $SERVER_WEBHOOK_URL
