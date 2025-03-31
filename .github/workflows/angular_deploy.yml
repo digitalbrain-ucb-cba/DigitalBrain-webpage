@@ -21,4 +21,4 @@ jobs:
         env:
           SERVER_WEBHOOK_URL: ${{ secrets.SERVER_WEBHOOK_URL }}
         run: |
-          curl -v -X POST -H "Content-Type: application/json" -d '{"trigger": "deploy"}' $SERVER_WEBHOOK_URL
+          curl -f -X POST -H "Content-Type: application/json" -d '{"trigger": "deploy"}' $SERVER_WEBHOOK_URL
