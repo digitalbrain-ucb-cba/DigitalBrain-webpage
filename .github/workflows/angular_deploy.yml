@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout del código
+      - name: Checkout the code
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -17,12 +17,10 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Enviar señal de deployment al servidor
-        env:
-          SERVER_WEBHOOK_URL: ${{ secrets.SERVER_WEBHOOK_URL }}
+      - name: Deploy to Server
         run: |
-          curl -f -X POST -H "Content-Type: application/json" -d '{"trigger": "deploy"}' $SERVER_WEBHOOK_URL
-      
+          curl -f -X POST -H "Content-Type: application/json" -d '{"trigger":"deploy"}' ${{ secrets.SERVER_WEBHOOK_URL }}
+
       - name: Create Deployment
         id: create_deployment
         uses: peter-evans/create-deployment@v1
