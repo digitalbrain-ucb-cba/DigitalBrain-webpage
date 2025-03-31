@@ -7,29 +7,53 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout the code
         uses: actions/checkout@v4
 
-      - name: Send deployment signal to server
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies and build Angular
         run: |
-          curl -f -X POST -H "Content-Type: application/json" -d '{"trigger":"deploy"}' ${{ secrets.SERVER_WEBHOOK_URL }}
+          npm install
+          npx ng build --configuration production
 
-      - name: Create Deployment
-        id: create_deployment
-        uses: peter-evans/create-deployment@v2
-        with:
-          ref: ${{ github.ref }}
-          environment: production
-          description: "Deploy to production: https://digitalbrain.cba.ucb.edu.bo"
-          auto_merge: false
-          transient_environment: false
-          required_contexts: ''
-
-      - name: Set Deployment Status to Success
-        uses: peter-evans/create-deployment-status@v2
-        with:
-          deployment_id: ${{ steps.create_deployment.outputs.deployment_id }}
-          state: success
-          environment_url: "https://digitalbrain.cba.ucb.edu.bo/"
-          description: "Production deployment successful."
+      - name: Send deployment signal to server
+        env:
+          SERVER_WEBHOOK_URL: ${{ secrets.SERVER_WEBHOOK_URL }}
+        run: |
+          curl -f -X POST -H "Content-Type: application/json" -d '{"trigger": "deploy"}' $SERVER_WEBHOOK_URL
+      
+      - name: Update README with deployment status
+        if: success()
+        run: |
+          # Get the current date and time
+          DEPLOY_TIME=$(date '+%Y-%m-%d %H:%M:%S')
+          
+          # Check if README.md exists
+          if [ -f README.md ]; then
+            # Check if the deployment section already exists
+            if grep -q "## Deployment Status" README.md; then
+              # Update existing deployment section
+              sed -i '/## Deployment Status/,/^$/c\## Deployment Status\n\n:white_check_mark: **Latest deployment:** '"$DEPLOY_TIME"'\n\n:link: **Live site:** [https://digitalbrain.cba.ucb.edu.bo/](https://digitalbrain.cba.ucb.edu.bo/)\n\n' README.md
+            else
+              # Add new deployment section
+              echo -e "\n## Deployment Status\n\n:white_check_mark: **Latest deployment:** $DEPLOY_TIME\n\n:link: **Live site:** [https://digitalbrain.cba.ucb.edu.bo/](https://digitalbrain.cba.ucb.edu.bo/)\n" >> README.md
+            fi
+          else
+            # Create README.md if it doesn't exist
+            echo -e "# Project Name\n\n## Deployment Status\n\n:white_check_mark: **Latest deployment:** $DEPLOY_TIME\n\n:link: **Live site:** [https://digitalbrain.cba.ucb.edu.bo/](https://digitalbrain.cba.ucb.edu.bo/)\n" > README.md
+          fi
+          
+          # Commit and push changes
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add README.md
+          git commit -m "Update deployment status [skip ci]"
+          git push
+        permissions:
+          contents: write
