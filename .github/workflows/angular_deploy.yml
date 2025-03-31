@@ -7,22 +7,14 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout del código
+      - name: Checkout the code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-
-      - name: Enviar señal de deployment al servidor
-        env:
-          SERVER_WEBHOOK_URL: ${{ secrets.SERVER_WEBHOOK_URL }}
+      - name: Send deployment signal to server
         run: |
-          curl -f -X POST -H "Content-Type: application/json" -d '{"trigger": "deploy"}' $SERVER_WEBHOOK_URL
-      
+          curl -f -X POST -H "Content-Type: application/json" -d '{"trigger":"deploy"}' ${{ secrets.SERVER_WEBHOOK_URL }}
+
       - name: Create Deployment
         id: create_deployment
         uses: peter-evans/create-deployment@v1
@@ -32,7 +24,7 @@ jobs:
           description: "Deploy to production: https://digitalbrain.cba.ucb.edu.bo"
           auto_merge: false
           transient_environment: false
-          required_contexts: []
+          #required_contexts: []
 
       - name: Set Deployment Status to Success
         uses: peter-evans/create-deployment-status@v1
