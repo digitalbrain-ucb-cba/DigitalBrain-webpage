@@ -20,11 +20,6 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install dependencies and build Angular
-        run: |
-          npm install
-          npx ng build --configuration production
-
       - name: Send deployment signal to server
         env:
           SERVER_WEBHOOK_URL: ${{ secrets.SERVER_WEBHOOK_URL }}
