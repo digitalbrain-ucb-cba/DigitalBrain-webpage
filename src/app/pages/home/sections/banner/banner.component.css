@@ -1,0 +1,21 @@
+.banner{
+    height: 100vh;
+    background-color: var(--mat-sys-secondary);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.brain-icon {
+    width: 320px;
+    height: 300px;
+}
+
+.banner h1 {
+    font-size: 65px;
+    font-weight: bold;
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff; 
+}
+
