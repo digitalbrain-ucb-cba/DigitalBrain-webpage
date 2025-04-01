@@ -6,9 +6,9 @@ html {
   /* Primary palette variables */
   --mat-sys-primary: light-dark(#006875, #23B2C6);
   --mat-sys-on-primary: light-dark(#ffffff, #ffffff);
-  --mat-sys-primary-container: light-dark(#9defff, #004f59);
-  --mat-sys-on-primary-container: light-dark(#001f24, #9defff);
-  --mat-sys-inverse-primary: light-dark(#59d7ec, #006875);
+  --mat-sys-primary-container: light-dark(#9defff, #499cab);
+  --mat-sys-on-primary-container: light-dark(#001f24, #000000);
+  --mat-sys-inverse-primary: light-dark(#59d7ec, #00505a);
   --mat-sys-primary-fixed: light-dark(#9defff, #9defff);
   --mat-sys-primary-fixed-dim: light-dark(#59d7ec, #59d7ec);
   --mat-sys-on-primary-fixed: light-dark(#001f24, #001f24);
@@ -68,7 +68,7 @@ html {
   /* TYPOGRAPHY SYSTEM VARIABLES */
 
   /* Typography variables. Only used in the different typescale system variables. */
-  --mat-sys-brand-font-family: Roboto; /* The font-family to use for brand text. */
+  --mat-sys-brand-font-family: Orbitron; /* The font-family to use for brand text. */
   --mat-sys-plain-font-family: Roboto; /* The font-family to use for plain text. */
   --mat-sys-bold-font-weight: 700; /* The font-weight to use for bold text. */
   --mat-sys-medium-font-weight: 500; /* The font-weight to use for medium text. */
