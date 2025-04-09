@@ -1,7 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-h1, h2, h3, h4, h5, h6 { font-family: var(--mat-sys-brand-font-family) }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: var(--mat-sys-plain-font-family) }
+h1, h2, h3, h4, h5, h6 { font-family: var(--mat-sys-brand-font-family); font-weight: normal; }
