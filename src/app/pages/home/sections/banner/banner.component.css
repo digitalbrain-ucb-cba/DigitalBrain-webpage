@@ -1,21 +1,59 @@
 .banner{
     height: 100vh;
-    background-color: var(--mat-sys-secondary);
+    background-color:#000B10;
     align-items: center;
     justify-content: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 20px;
+    padding: 0 20px 0 140px;
 }
 
-.brain-icon {
-    width: 320px;
-    height: 300px;
+.banner img {
+    height: 100%;
 }
 
 .banner h1 {
     font-size: 65px;
-    font-weight: bold;
-    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff; 
 }
 
+.title::after {
+    content: "BRAIN";
+    color: var(--mat-sys-primary);
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin-top: 50px;
+    button {
+        width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .banner {
+        width: 100%;
+        height: 100vh;
+        padding: 16px;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .banner img {
+        height: 50%;
+    }
+    .banner .buttons {
+        flex-direction: row;
+    
+    }
+    .banner h1 {
+        font-size: 40px;
+    }
+    .banner .buttons button {
+        width: 100%;
+    }
+}
