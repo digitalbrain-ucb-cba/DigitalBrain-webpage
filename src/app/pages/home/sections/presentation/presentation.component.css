@@ -1,0 +1,78 @@
+.presentation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 4rem 2rem;
+    background-color: #030b12;
+    color: #f0f8ff;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .presentation .image-container {
+    flex: 1 1 45%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  .presentation .image-container img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  }
+  
+  .presentation .text-container {
+    flex: 1 1 45%;
+    padding: 1rem 2rem;
+  }
+  
+  .presentation .text-container h2 {
+    font-size: 2.5rem;
+    color: #00eaff;
+    margin-bottom: 1rem;
+  }
+  
+  .presentation .text-container h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    color: #00eaff;
+  }
+  
+  .presentation .text-container ul {
+    padding-left: 1.5rem;
+  }
+  
+  .presentation .text-container ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .presentation .button-group {
+    margin-top: 2rem;
+  }
+  
+  .presentation .button-group .btn {
+    padding: 0.8rem 1.5rem;
+    margin-right: 1rem;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .presentation .button-group .btn.primary {
+    background-color: #00eaff;
+    color: #000;
+  }
+  
+  .presentation .button-group .btn.secondary {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .presentation .button-group .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #00eaff;
+  }
+  
