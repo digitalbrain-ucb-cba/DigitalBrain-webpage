@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body { height: 100%; 
+background-color: black;}
 body { margin: 0; font-family: var(--mat-sys-plain-font-family) }
 h1 {font-family: var(--mat-sys-brand-font-family); font-weight: normal; }
 h2, h3, h4, h5, h6 {font-family: "Armata", sans-serif;}

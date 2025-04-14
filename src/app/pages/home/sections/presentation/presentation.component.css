@@ -4,7 +4,6 @@
     justify-content: center;
     align-items: flex-start;
     padding: 4rem 2rem;
-    background-color: #030b12;
     color: #f0f8ff;
     font-family: 'Segoe UI', sans-serif;
   }
@@ -51,7 +50,7 @@
     margin-top: 2rem;
   }
   
-  .presentation .button-group .btn {
+  /* .presentation .button-group .btn {
     padding: 0.8rem 1.5rem;
     margin-right: 1rem;
     border-radius: 30px;
@@ -75,4 +74,4 @@
     transform: scale(1.05);
     box-shadow: 0 0 10px #00eaff;
   }
-  
+   */
