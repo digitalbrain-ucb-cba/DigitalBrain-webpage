@@ -1,0 +1,63 @@
+.supervisors-section {
+  color: #ffffff;
+  padding: 5rem 2rem;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 4rem;
+  line-height: 1.3;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #00ffff;
+  letter-spacing: 1.5px;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.mentor-card {
+  background-color: #1a1a1a;
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 320px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mentor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+}
+
+.mentor-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid #00ffff33;
+}
+
+.mentor-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.mentor-description {
+  font-size: 0.95rem;
+  color: #c5c5c5;
+  line-height: 1.5;
+}
