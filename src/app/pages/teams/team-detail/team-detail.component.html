@@ -1,0 +1,21 @@
+<div class="detail-container" *ngIf="team">
+    <img [src]="team.image" [alt]="team.name" class="detail-image" />
+  
+    <h2 class="detail-title">{{ team.name }}</h2>
+    <p class="detail-description">{{ team.description }}</p>
+  
+    <h3 class="members-heading">Miembros</h3>
+    <div class="members-grid">
+      <ng-container *ngFor="let member of team.members">
+        <div class="member">
+          <div class="avatar">
+            <i class="material-icons">person</i>
+          </div>
+          <span class="member-name">{{ member }}</span>
+        </div>
+      </ng-container>
+    </div>
+  
+    <button routerLink="/teams" class="back-btn">← Volver</button>
+  </div>
+  

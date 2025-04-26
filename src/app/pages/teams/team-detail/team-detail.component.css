@@ -1,0 +1,84 @@
+.detail-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .detail-image {
+    max-width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    margin-bottom: 1.5rem;
+    padding-top: 10rem;
+  }
+  
+  .detail-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .detail-description {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    white-space: pre-line; /* respeta saltos de línea en description */
+  }
+  
+  .members-heading {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* grid responsive de avatares */
+  .members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* cada miembro */
+  .member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* círculo avatar */
+  .avatar {
+    width: 64px;
+    height: 64px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* icono dentro del círculo */
+  .avatar .material-icons {
+    font-size: 36px;
+    color: #757575;
+  }
+  
+  .member-name {
+    font-size: 0.9rem;
+    text-align: center;
+    word-break: break-word;
+  }
+  
+  /* botón volver */
+  .back-btn {
+    background: none;
+    border: none;
+    color: #1982c4;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .back-btn:hover {
+    text-decoration: underline;
+  }
+  

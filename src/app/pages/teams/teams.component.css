@@ -1,0 +1,9 @@
+.teams-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5rem;
+    background-color: #000000;    /* fondo negro */
+  }

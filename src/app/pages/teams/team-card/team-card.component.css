@@ -1,0 +1,58 @@
+.card {
+    background: linear-gradient(
+      225deg,
+      #000B10 0%,
+      #23b3c634 60%,
+      #23b3c65e 75%,
+      #23b3c6b9 100%
+    );
+    border-radius: 15px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    flex: 1 1 calc(33% - 20px);      
+    min-width: 250px;                
+    min-height: 400px;               
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    color: #fff;
+  }
+  
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: flex-start; 
+  }
+  
+  .team-title {
+    padding: 2rem;
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+    color: #ffffff;
+    text-align: center; 
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;  
+    margin-top: 1rem;
+    gap: 0.5rem;
+  }
+  
+  .visit-button {
+    width: auto;              
+    padding: .5rem 3rem;
+    border-radius: 16px;
+    background-color: #1982C4;
+    font-size: 20px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .visit-button:hover {
+    background-color: #186FAC;
+  }
+  

@@ -1,0 +1,14 @@
+<div class="card">
+    <div class="card-content">
+      <h3 class="team-title">{{ title }}</h3>
+      <img [src]="image" alt="{{ title }}" class="card-image" />
+      <div class="buttons">
+        <button
+          class="visit-button"
+          [routerLink]="['/teams', id]"
+        >
+          {{ visitLabel }}
+        </button>
+      </div>
+    </div>
+  </div>  
