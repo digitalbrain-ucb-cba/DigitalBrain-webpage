@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
+
 
 interface TeamData {
   name: string;
@@ -102,7 +102,7 @@ const TEAMS_DATA: Record<string, TeamData> = {
 @Component({
   selector: 'app-team-detail',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [RouterModule],
   templateUrl: './team-detail.component.html',
   styleUrls: ['./team-detail.component.css']
 })

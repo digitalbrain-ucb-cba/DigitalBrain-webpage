@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { TeamCardComponent } from './team-card/team-card.component';
 
 @Component({
   selector: 'app-teams',
   standalone: true,
-  imports: [ CommonModule, TeamCardComponent ],
+  imports: [TeamCardComponent],
   templateUrl: './teams.component.html',
   styleUrls: ['./teams.component.css']
 })
