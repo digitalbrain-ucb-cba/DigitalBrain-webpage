@@ -1,6 +1,6 @@
 # DigitalBrainWebpage
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4. Currently has been upgraded to version 20.3.30.
 
 ## Development server
 
